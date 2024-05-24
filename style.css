@@ -1,3 +1,33 @@
-.card {
-    border: 1px solid rebeccapurple;
+dialog {
+    background-color: aquamarine;
+
 }
+
+ul {
+    list-style: none;
+    border: 1px solid;
+    padding: 0%;
+
+    li {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.checkbox {
+    flex-direction: row;
+}
+
+.top {
+    height: 10%;
+    
+}
+
+.main{
+    height: 100%;
+}
+
+.card {
+    border: 1px dashed goldenrod;
+}
+

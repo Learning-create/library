@@ -1,5 +1,63 @@
 const myLibrary = [];
 
+const dialog = document.querySelector("dialog");
+const bookForm = document.getElementById("bookForm");
+const closeBtn = document.getElementById("closeBtn");
+const showBtn = document.querySelector(".top button");
+const remBtn = document.querySelector(".removeBook");
+
+
+//New Book button opens dialogue box and closeBtn closes it
+
+showBtn.addEventListener("click", () => {
+    dialog.showModal();
+});
+
+closeBtn.addEventListener("click", () => {
+    dialog.close();
+})
+
+//Collects dialoge's form data
+
+bookForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    let title = document.getElementById("title");
+    let author = document.getElementById("author");
+    let pages = document.getElementById("pages");
+    let chread = document.getElementById("read");
+
+    if (title.value == "" || author.value == "" || pages.value == "") {
+        alert("Please check if you forgot something");
+    } else {
+
+        if (chread.checked == true) {
+            
+            read = "I've already read it";
+            chread.checked = false;
+
+        } else {
+
+            read = "not yet";
+
+        }
+
+       let newBook = new Book(title.value,author.value,pages.value,read);
+       
+        title.value = "";
+        author.value = "";
+        pages.value = "";
+        
+        dialog.close() 
+
+    }
+    
+    
+})
+
+
+//Adds a new card with each book
+
 function addCard(title, author, pages, read) {
     var element = document.createElement("div");
     element.className = "card";
@@ -9,11 +67,12 @@ function addCard(title, author, pages, read) {
     <p class="author">${author}</p>
     <p class="pages">${pages}</p>
     <p class="read">${read}</p>
+    <button class="removeBook">Remove</button>
     `
     
 }  
 
-
+//Book object contructor
 
 function Book(title, author, pages, read) {
 
@@ -32,17 +91,17 @@ function Book(title, author, pages, read) {
 
 }
 
+//Adds books to myLibrary array
+
 function addBookToLibrary(book) {
     myLibrary.push(book);
 }
 
-const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 295, "not read yet");
-const Mocking = new Book("To Kill a Mockingbird", "HArper Lee", 281, "not read yet")
 
-/*display the values of books (rn just theHobbit)
-document.querySelector(".title").textContent = `${theHobbit.title}`;
-document.querySelector(".author").textContent = `${theHobbit.author}`;
-document.querySelector(".pages").textContent = `${theHobbit.pages}`;
-document.querySelector(".read").textContent = `${theHobbit.read}`;
-*/
+
+//test book(s)
+
+const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 295, "not read yet");
+const Mocking = new Book("To Kill a Mockingbird", "Harper Lee", 281, "not read yet")
+
 
