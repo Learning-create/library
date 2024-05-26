@@ -4,7 +4,7 @@ const dialog = document.querySelector("dialog");
 const bookForm = document.getElementById("bookForm");
 const closeBtn = document.getElementById("closeBtn");
 const showBtn = document.querySelector(".top button");
-const remBtn = document.querySelector(".removeBook");
+
 
 
 //New Book button opens dialogue box and closeBtn closes it
@@ -14,7 +14,11 @@ showBtn.addEventListener("click", () => {
 });
 
 closeBtn.addEventListener("click", () => {
+    let chread = document.getElementById("read");
+
+    chread.checked = false;
     dialog.close();
+
 })
 
 //Collects dialoge's form data
@@ -67,6 +71,7 @@ function addCard(title, author, pages, read) {
     <p class="author">${author}</p>
     <p class="pages">${pages}</p>
     <p class="read">${read}</p>
+    <button class="readBtn">Read</button>
     <button class="removeBook">Remove</button>
     `
     
@@ -94,14 +99,16 @@ function Book(title, author, pages, read) {
 //Adds books to myLibrary array
 
 function addBookToLibrary(book) {
+    let arrNum = myLibrary.length;
+    book.num = arrNum;
     myLibrary.push(book);
+    
 }
 
+//remove book from myLibrary
 
 
 //test book(s)
 
 const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 295, "not read yet");
 const Mocking = new Book("To Kill a Mockingbird", "Harper Lee", 281, "not read yet")
-
-

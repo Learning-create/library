@@ -1,12 +1,100 @@
+body {
+    --bkg-firts: rgb(253, 239, 220);
+
+}
+
 dialog {
-    background-color: aquamarine;
+    border: 0ch;
+    border-radius: 20px;
+    height: 70%;
+    aspect-ratio: 1/1.5;
+    background-color: var(--bkg-firts);
+}
+
+#modal {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;    
+}
+
+#closeBtn {
+    border: 0px;
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+    align-self: flex-end;
+    background-color: inherit;
+    font-size: 1.10rem;
+}
+
+#closeBtn:hover {
+    text-shadow: 2px 2px 3px red;
+}
+
+#bookForm {
+    height: 80%;
+    margin: 10%;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+input {
+    height: 1.75rem;
+    font-size: 1.50rem;
+    border: 0px;
+    border-bottom: 1px solid gray;
+    background-color: inherit;
+    margin: .5rem 0rem;
+}
+
+input[type="checkbox"] {
+    /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: rgba(255, 54, 54, 0.685);
+  /* Not removed via appearance */
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 80px;
+  border: 1px solid currentColor;
+  border-radius: 10px;
+  transform: translateY(-0.075em);
+  border: 0ch;
+
+  display: grid;
+  place-content: center;
+
+}
+
+input[type="checkbox"]:hover {
+    box-shadow: 1px 1px 5px;
+}
+
+input[type="checkbox"]:checked {
+    background-color: rgba(153, 250, 153, 0.747);
+    border: 0ch;
+}
+
+input[type="checkbox"]::before {
+    content: "No";
+}
+
+input[type="checkbox"]:checked::before {
+    content: "Yes";
 
 }
 
 ul {
     list-style: none;
-    border: 1px solid;
     padding: 0%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 
     li {
         display: flex;
@@ -14,8 +102,22 @@ ul {
     }
 }
 
+form button {
+    font-size: 1.25rem;
+    align-self: center;
+    padding: .5rem;
+    border-radius: 20px;
+    background-color: rgb(158, 203, 255);
+    border: 0ch;
+}
+
+form button:hover {
+    box-shadow: 1px 1px 5px;
+}
+
 .checkbox {
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .top {
