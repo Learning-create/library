@@ -3,7 +3,14 @@ const myLibrary = [];
 const dialog = document.querySelector("dialog");
 const bookForm = document.getElementById("bookForm");
 const closeBtn = document.getElementById("closeBtn");
-const showBtn = document.querySelector(".top button");
+const showBtn = document.querySelector(".add button");
+
+//var for form
+
+let title = document.getElementById("title");
+    let author = document.getElementById("author");
+    let pages = document.getElementById("pages");
+    let chread = document.getElementById("read");
 
 
 
@@ -14,9 +21,12 @@ showBtn.addEventListener("click", () => {
 });
 
 closeBtn.addEventListener("click", () => {
-    let chread = document.getElementById("read");
 
     chread.checked = false;
+    title.value = "";
+    author.value = "";
+    pages.value = "";
+
     dialog.close();
 
 })
@@ -25,11 +35,6 @@ closeBtn.addEventListener("click", () => {
 
 bookForm.addEventListener("submit", (e) => {
     e.preventDefault();
-
-    let title = document.getElementById("title");
-    let author = document.getElementById("author");
-    let pages = document.getElementById("pages");
-    let chread = document.getElementById("read");
 
     if (title.value == "" || author.value == "" || pages.value == "") {
         alert("Please check if you forgot something");

@@ -1,6 +1,20 @@
 body {
-    --bkg-firts: rgb(253, 239, 220);
+    height: 100vh;
+    margin: 0%;
+    padding: 0%;
 
+    --bkg-firts: rgb(253, 239, 220);
+    --acc-prim: rgb(193, 250, 250);
+    --bkg-sec: rgb(255, 238, 145);
+    --acc-sec: rgb(0, 132, 255);
+
+}
+
+svg {
+    height: 4rem;
+    width: 4rem;
+    position: relative;
+    
 }
 
 dialog {
@@ -120,13 +134,32 @@ form button:hover {
     justify-content: space-between;
 }
 
-.top {
-    height: 10%;
-    
+.add {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+.add button {
+    font-size: 2rem;
+    height: 4rem;
+    aspect-ratio: 1/1;
+    padding: 0%;
+    border-radius: 50%;
+    border: 0px;
+    background-color: inherit;
+}
+
+.add button:hover {
+    box-shadow: 1px 1px 5px var(--bkg-sec);
+    background-color: var(--acc-sec);
+     * {
+        fill: white;
+    }
 }
 
 .main{
-    height: 100%;
+    background-color: blanchedalmond;
 }
 
 .card {
