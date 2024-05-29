@@ -173,7 +173,6 @@ form button:hover {
     grid-template-rows: repeat(auto-fit, 300px);
     grid-auto-rows: 300px;
     gap: 1rem;
-
     padding: 20px;
 }
 
@@ -181,3 +180,10 @@ form button:hover {
     border: 1px dashed goldenrod;
 }
 
+.not {
+    visibility: none;
+}
+
+.not::before {
+    content : "lol"
+}

@@ -22,7 +22,7 @@ showBtn.addEventListener("click", () => {
 
 closeBtn.addEventListener("click", () => {
 
-    chread.checked = false;
+    read.checked = false;
     title.value = "";
     author.value = "";
     pages.value = "";
@@ -40,13 +40,15 @@ bookForm.addEventListener("submit", (e) => {
         alert("Please check if you forgot something");
     } else {
 
-       let newBook = new Book(title.value,author.value,pages.value,read);
+       let newBook = new Book(title.value,author.value,pages.value,read.checked);
        
         title.value = "";
         author.value = "";
         pages.value = "";
+        read.checked = false
         
         dialog.close() 
+
 
     }
     
@@ -63,7 +65,7 @@ function addCard(title, author, pages, read) {
     if (read === true) {
         read = "read"
     } else {
-        read = "not yet"
+        read = "not read"
     }
     
     var element = document.createElement("div");
@@ -73,8 +75,7 @@ function addCard(title, author, pages, read) {
     <p class="title">${title}</p>
     <p class="author">${author}</p>
     <p class="pages">${pages}</p>
-    <p class="read" data-title="${book.title}">${read}</p>
-    <button class="readBtn" data-title="${book.title}">Read</button>
+    <button class="readBtn" data-title="${book.title}"></button>
     <button class="removeBook" data-title="${book.title}">Remove</button>
     `
 
@@ -102,6 +103,8 @@ function addCard(title, author, pages, read) {
     let readBtn =document.querySelectorAll(".readBtn");
 
     for (let i = 0; i < readBtn.length; i++) {
+                
+        
         
         if (!readBtn[i].classList.contains("listening")) {
 
@@ -109,20 +112,25 @@ function addCard(title, author, pages, read) {
 
                 title = readBtn[i].getAttribute("data-title");
                 book = myLibrary.find(book => book.title === title)
-                console.log(book.read)
                 
                 if (book.read === false) {
                     book.read = true
+                    readBtn[i].style.backgroundColor = "green";
+                    readBtn[i].textContent = "Read"
                 } else {
                     book.read = false
+                    readBtn[i].style.backgroundColor = "red"
+                    readBtn[i].textContent = "not Read"
                 }
 
-
-                
-                console.log(book.read)
-
             })
-
+            if (read === "not read") {
+                readBtn[i].style.backgroundColor = "red"
+                readBtn[i].textContent = "not Read"
+            } else {
+                readBtn[i].style.backgroundColor = "green"
+                readBtn[i].textContent = "Read"
+            }
             readBtn[i].classList.add("listening")
         } 
 
@@ -165,11 +173,9 @@ const Mocking = new Book("To Kill a Mockingbird", "Harper Lee", 281, true)
 function removeFromLibrary(title) {
     book =  myLibrary.find(book => book.title === title);
     index = myLibrary.indexOf(book);
-    console.log(index);
     if (index > -1) {
         myLibrary.splice(index, 1);
     }    
-    console.log(myLibrary)
 }
 
 // remove card
