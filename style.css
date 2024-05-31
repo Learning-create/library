@@ -1,13 +1,114 @@
+@font-face {
+    font-family: 'punk_typewriterregular';
+    src: url('fonts/punk_typewriter-webfont.woff2') format('woff2'),
+         url('fonts/punk_typewriter-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'oldstyle_1hplhs';
+    src: url('fonts/oldsh___-webfont.woff2') format('woff2'),
+         url('fonts/oldsh___-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'oldstyle_italichplhs';
+    src: url('fonts/oldsih__-webfont.woff2') format('woff2'),
+         url('fonts/oldsih__-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'oldstyle_small_capshplhs';
+    src: url('fonts/oldssch_-webfont.woff2') format('woff2'),
+         url('fonts/oldssch_-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'enchanted_landregular';
+    src: url('fonts/enchanted_land-webfont.woff2') format('woff2'),
+         url('fonts/enchanted_land-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'jmh_typewriterregular';
+    src: url('fonts/jmh_typewriter-webfont.woff2') format('woff2'),
+         url('fonts/jmh_typewriter-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'jmh_typewriterregular';
+    src: url('fonts/jmh_typewriter-webfont.woff2') format('woff2'),
+         url('fonts/jmh_typewriter-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
 body {
-    height: 100vh;
     margin: 0%;
     padding: 0%;
 
-    --bkg-firts: rgb(253, 239, 220);
-    --acc-prim: rgb(193, 250, 250);
-    --bkg-sec: rgb(255, 238, 145);
-    --acc-sec: rgb(0, 132, 255);
+    --bkg-firts: #3B3561;
+    --acc-prim: #EEC6CA;
+    --bkg-sec: #8a9c6d;
+    --acc-sec: #D6F8D6;
 
+
+    background-image: url(https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    background-position: center;
+}
+
+.heading {
+    background-image: url(https://images.unsplash.com/photo-1603484477859-abe6a73f9366?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    margin: 0%;
+    height: 5rem;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-auto-flow: column;
+    gap: 2rem;
+}
+
+h1 {
+    margin: 0%;
+    font-family: 'punk_typewriterregular';
+    font-size: 4rem;
+    font-weight: 500;
+}
+
+p {
+    margin: 0;
 }
 
 svg {
@@ -23,6 +124,13 @@ dialog {
     height: 70%;
     aspect-ratio: 1/1.5;
     background-color: var(--bkg-firts);
+    font-family: 'punk_typewriterregular';
+    font-size: 2.5rem;
+
+    button {
+        font-family: 'punk_typewriterregular';
+        font-size: 2.5rem;
+    }
 }
 
 #modal {
@@ -48,30 +156,32 @@ dialog {
         border-radius: 50%;
         top: -15px;
         left: -11px;
+        fill: antiquewhite
     }
 }
 
 #closeBtn:hover {
-    box-shadow: 1px 1px 10px red;
-    background-color: red;
+    box-shadow: 1px 1px 10px rgb(160, 0, 0);
+    background-color: rgb(160, 0, 0);
 }
 
 #bookForm {
     height: 80%;
-    margin: 10%;
-    font-size: 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    color: antiquewhite;
 }
 
 input {
     height: 1.75rem;
-    font-size: 1.50rem;
+    font-size: 1.7rem;
+    color: white;
     border: 0px;
     border-bottom: 1px solid gray;
     background-color: inherit;
     margin: .5rem 0rem;
+    font-family: 'jmh_typewriterregular';
 }
 
 input[type="checkbox"] {
@@ -96,7 +206,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:hover {
-    box-shadow: 1px 1px 5px;
+    box-shadow: 1px 1px 5px var(--acc-sec);
 }
 
 input[type="checkbox"]:checked {
@@ -105,6 +215,7 @@ input[type="checkbox"]:checked {
 }
 
 input[type="checkbox"]::before {
+    color: black;
     content: "No";
 }
 
@@ -127,7 +238,6 @@ ul {
 }
 
 form button {
-    font-size: 1.25rem;
     align-self: center;
     padding: .5rem;
     border-radius: 20px;
@@ -136,7 +246,7 @@ form button {
 }
 
 form button:hover {
-    box-shadow: 1px 1px 5px;
+    box-shadow: 1px 1px 5px var(--acc-sec);
 }
 
 .checkbox {
@@ -158,32 +268,60 @@ form button:hover {
     border-radius: 50%;
     border: 0px;
     background-color: inherit;
+    fill: #f5f5f5;
 }
 
 .add button:hover {
-    box-shadow: 1px 1px 5px var(--bkg-sec);
-    background-color: var(--acc-sec);
+    box-shadow: 1px 1px 5px var(--bkg-firts);
+    background-color: var(--bkg-firts);
 }
 
+#plus_circle {
+    fill: antiquewhite
+}
 
 .container{
-    background-color: blanchedalmond;
+
     display: grid;
-    grid-template-columns: repeat(auto-fill, 200px);
-    grid-template-rows: repeat(auto-fit, 300px);
+    grid-template-columns: repeat(auto-fill, 250px);
+    grid-template-rows: repeat(auto-fit, 350px);
     grid-auto-rows: 300px;
-    gap: 1rem;
-    padding: 20px;
+    gap: 2rem;
+    margin-inline: auto;
+    margin-block: 3em;
+    margin: 50px;
+    padding: 30px;
+
 }
 
 .card {
-    border: 1px dashed goldenrod;
+    box-shadow: 5px 5px 5px;
+    border-radius: 0% 5px 5px 0px;
+    position: relative;
+    background-color: greenyellow;
+    font-family: 'enchanted_landregular';
+    font-size: 3rem;
+    padding: 1.25rem;
+
+    .author {
+        color: rgb(78, 78, 78);
+        font-family: 'oldstyle_1hplhs';
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .pages {
+        color: gray;
+        font-family:'oldstyle_1hplhs';
+        font-size: 1.25rem;
+    }
+
 }
 
-.not {
-    visibility: none;
+.card:nth-child(3n){
+    background-color: aqua;
 }
 
-.not::before {
-    content : "lol"
+.card:nth-child(3n-1){
+    background-color: maroon;
 }

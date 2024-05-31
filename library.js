@@ -73,8 +73,8 @@ function addCard(title, author, pages, read) {
     document.querySelector(".container").appendChild(element);
     element.innerHTML = `
     <p class="title">${title}</p>
-    <p class="author">${author}</p>
-    <p class="pages">${pages}</p>
+    <p class="author">By ${author}</p>
+    <p class="pages">${pages} pages</p>
     <button class="readBtn" data-title="${book.title}"></button>
     <button class="removeBook" data-title="${book.title}">Remove</button>
     `
@@ -167,6 +167,7 @@ function addBookToLibrary(book) {
 
 const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 295, false);
 const Mocking = new Book("To Kill a Mockingbird", "Harper Lee", 281, true)
+
 
 //remove book from myLibrary
 
