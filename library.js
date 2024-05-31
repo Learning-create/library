@@ -175,8 +175,6 @@ function addBookToLibrary(book) {
 
 //test book(s)
 
-const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 295, false);
-const Mocking = new Book("To Kill a Mockingbird", "Harper Lee", 281, true)
 const Circe = new Book("Circe","Madeline Miller", 393, true)
 
 
