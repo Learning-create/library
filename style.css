@@ -349,3 +349,9 @@ form button:hover {
         z-index: 1;
     }
   }
+
+@-moz-document url-prefix() {
+    .removeBook svg {
+        right: 18%;
+    }
+}
